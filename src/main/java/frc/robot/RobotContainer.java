@@ -18,6 +18,7 @@ import frc.robot.commands.autonomous.RightAuto;
 import frc.robot.subsystems.*;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.button.JoystickButton;
+import edu.wpi.first.wpilibj2.command.button.POVButton;
 
 /**
  * This class is where the bulk of the robot should be declared. Since
@@ -77,6 +78,11 @@ public class RobotContainer {
     new JoystickButton(m_driverController, 10).whileHeld(new MoveArm(m_arm,1));
 
     new JoystickButton(m_driverController, 11).whileHeld(new MoveArm(m_arm,-1));
+  
+    new POVButton(m_driverController, 0).whileHeld(new FieldOrientedTurnPID(m_drive,0));
+    new POVButton(m_driverController, 90).whileHeld(new FieldOrientedTurnPID(m_drive,90));
+    new POVButton(m_driverController, 180).whileHeld(new FieldOrientedTurnPID(m_drive,180));
+    new POVButton(m_driverController, 270).whileHeld(new FieldOrientedTurnPID(m_drive,270));
   }
 
   /**
