@@ -7,6 +7,7 @@
 
 package frc.robot;
 
+import edu.wpi.first.wpilibj.kinematics.DifferentialDriveKinematics;
 import frc.robot.subsystems.ShooterConnection;
 
 /**
@@ -24,13 +25,38 @@ public final class Constants {
         public static final int intakeMotorPort =2;
         public static final int HallEffectPort = 3;
     }
-    public final class DriveConstants {
+    
+    public final static class DriveConstants {
         public static final int driveMotorPort1 = 0;
         public static final int driveMotorPort2 = 1;
-        public static final int EncoderPort1= 2;
+        public static final int driveMotorPort3 = 6;
+        public static final int driveMotorPort4 = 7;
+        public static final int EncoderPort1 = 2;
         public static final int EncoderPort2 = 3;
-        public static final int EncoderPort3=4;
+        public static final int EncoderPort3 = 4;
         public static final int EncoderPort4 = 5;
+
+        public static final double turnP = 1.0;
+        public static final double turnI = 0.0;
+        public static final double turnD = 0.0;
+
+        public static final double accuracy = 1.0;
+        public static final double accuracy2 = 2.0;
+
+        public static final double ksVolts = 0.22;
+        public static final double kvVoltSecondsPerMeter = 1.98;
+        public static final double kaVoltSecondsSquaredPerMeter = 0.2;
+
+        public static final double kPDriveVel = 8.5;
+        public static final double kTrackwidthMeters = 0.69;
+        public static final DifferentialDriveKinematics kDriveKinematics = new DifferentialDriveKinematics(
+                kTrackwidthMeters);
+
+        public static final double kMaxSpeedMetersPerSecond = 3;
+        public static final double kMaxAccelerationMetersPerSecondSquared = 3;
+        public static final double kRamseteB = 2;
+        public static final double kRamseteZeta = 0.7;
+
     }
     public final class ShooterConnectionConstants{
         public static final int connectionMotorPort =0;

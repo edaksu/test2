@@ -17,6 +17,15 @@ public class HopperSubsystem extends SubsystemBase {
   public HopperSubsystem() {
 
   }
+  public  void runIntake(double speed) {
+    hopperMotor.set(speed);
+    
+  }
+
+  public void stopIntake() {
+    hopperMotor.set(0);
+    
+  }
 
   @Override
   public void periodic() {
